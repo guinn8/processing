@@ -8,13 +8,13 @@ class Point {
   }
   void add(float x,float y,float z){
     
-   PShape p= createShape(BOX,1);
+   PShape p= createShape(BOX,.5);
 
-    println("a="+x+" b="+y+" c="+z);
+    //println("a="+x+" b="+y+" c="+z);
     p.setStroke(false);
     p.translate(x,y,z);
    
-    p.setFill(color(0,0,map(z, -100, 100, 0,255)));
+    p.setFill(color(0,255-map(triples.c, -3, 3, 0,255),map(triples.c, -3, 3, 0,255)));
     math.addChild(p);
   }
   
@@ -23,7 +23,7 @@ class Point {
   void show(){
      shape(math); 
      translate(0,0,0);
-     //math=createShape(GROUP);
+     math=createShape(GROUP);
   }
 }
   
