@@ -10,8 +10,6 @@ public class Complex {
     public Complex(double real, double imag) {
         re = real;
         im = imag;
-        
-       
     }
 
     // return a string representation of the invoking Complex object
@@ -21,7 +19,13 @@ public class Complex {
         if (im <  0) return re + " - " + (-im) + "i";
         return re + " + " + im + "i";
     }
-
+    
+    public Complex power(float N){
+      float abs = pow((float)abs(),N);
+      float theta = (float)phase()*N;
+      
+      return new Complex(abs*Math.cos(theta),abs*Math.sin(theta));
+    }
     // return abs/modulus/magnitude
     public double abs() {
         return Math.hypot(re, im);
